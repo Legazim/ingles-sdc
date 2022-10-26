@@ -1,0 +1,86 @@
+/* General settings */
+
+:root {
+  --clr-bg: #292929;
+  --clr-default: #ffffff;
+
+  /* Borders */
+  --clr-pending: #ffffff;
+  --clr-late: #e74f4f;
+  --clr-done: #6de74f;
+  --clr-accent: #ee7029;
+
+  --size-pd: min(95%, calc(100% - 2rem));
+
+  --default-br: 0.75rem;
+  --default-border: 0.2rem solid var(--clr-default);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* outline: 1px dotted lime; */
+}
+
+body {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--clr-bg);
+}
+
+main {
+  display: grid;
+  gap: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* Utility classes */
+
+.card-section {
+  margin-inline: auto;
+  width: var(--size-pd);
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  overflow: hidden;
+  width: 100%;
+  border-radius: var(--default-br);
+  border: var(--default-border);
+}
+
+.cover {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.section-title {
+  line-height: 100%;
+  font-size: 2.812rem;
+  color: var(--clr-default);
+}
+
+.button {
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 1rem;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 0.625rem 1rem;
+  line-height: 100%;
+  border-radius: var(--default-br);
+  border: var(--default-border);
+  color: var(--clr-default);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.button:is(:hover, :focus-within) {
+  background-color: rgba(255, 255, 255, 0.15);
+}

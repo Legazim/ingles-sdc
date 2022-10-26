@@ -1,0 +1,24 @@
+.banner {
+  background-image: linear-gradient(180deg, transparent 0, var(--clr-bg) 100%),
+    url('./assets/banner-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 5.5rem;
+  width: 100%;
+}
+
+.banner_content {
+  margin-inline: auto;
+  font-weight: 700;
+  font-size: 1.625em;
+  color: var(--clr-default);
+  width: var(--size-pd);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.banner_logo {
+  height: 2.2em;
+}
