@@ -39,23 +39,23 @@
         </div>
       </section>
 
-      <section id="exercises" class="wrapper-section">
-        <!-- TITLE -->
-        <h1 class="section-title">Pending exercises</h1>
-        <div class="exercises-wrapper">
-          <!-- Card if empty -->
-          <div class="exercise card empty">
-            <div
-              class="cover"
-              style="
-                background-image: linear-gradient(
-                    180deg,
-                    transparent 50%,
-                    var(--clr-bg) 100%
-                  ),
-                  url(./assets/images/all-done.jpg);
-              "
-            ></div>
+      <section class="wrapper-section">
+        <h1 class="section-title">Your progress</h1>
+        <h2 class="section-subtitle">Look at all that you've done</h2>
+        <div class="progress">
+          <div class="card">
+            <div class="description">
+              <div class="status">
+                <img
+                  class="status_icon"
+                  src="./assets/svg/status-all-done.svg"
+                />
+                <p class="status_text">Exercises delivered</p>
+              </div>
+              <h2 class="description_numbers">08/10</h2>
+            </div>
+          </div>
+          <div class="card">
             <div class="description">
               <div class="status">
                 <img
@@ -67,38 +67,25 @@
               <h2 class="description_title">Nothing to see here</h2>
             </div>
           </div>
-          <!-- Card if late -->
-          <div class="exercise card late">
-            <div
-              class="cover"
-              style="
-                background-image: linear-gradient(
-                    180deg,
-                    transparent 50%,
-                    var(--clr-bg) 100%
-                  ),
-                  url(http://unsplash.it/600/400);
-              "
-            ></div>
+          <div class="card">
             <div class="description">
               <div class="status">
-                <img class="status_icon" src="./assets/svg/status-late.svg" />
-                <p class="status_text">late</p>
-              </div>
-              <h2 class="description_title">Present continuous #01</h2>
-              <div class="author">
                 <img
-                  class="author_picture"
-                  src="./assets/images/teachers/sonally.jpg"
+                  class="status_icon"
+                  src="./assets/svg/status-all-done.svg"
                 />
-                <div class="author_information">
-                  <p class="name">Sonaly Araújo</p>
-                  <p class="date">on Sep 30, 2022</p>
-                </div>
+                <p class="status_text">all done</p>
               </div>
+              <h2 class="description_title">Nothing to see here</h2>
             </div>
           </div>
-          <!-- Card if pending -->
+        </div>
+      </section>
+
+      <section id="exercises" class="wrapper-section">
+        <!-- TITLE -->
+        <h1 class="section-title">Your exercises</h1>
+        <div class="exercises-wrapper">
           <div class="exercise card">
             <div
               class="cover"
@@ -132,16 +119,8 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- Button -->
-        <a href="./exercises.html" class="button">View all exercises</a>
-      </section>
-
-      <section class="wrapper-section">
-        <h1 class="section-title">Reading recommendations</h1>
-        <div class="articles-wrapper">
-          <div class="article card">
-            <!-- Cover -->
+          <!-- Card if late -->
+          <div class="exercise card late">
             <div
               class="cover"
               style="
@@ -150,34 +129,29 @@
                     transparent 50%,
                     var(--clr-bg) 100%
                   ),
-                  url(http://unsplash.it/601/400?image=1070);
+                  url(http://unsplash.it/600/400);
               "
             ></div>
             <div class="description">
-              <h2 class="description_title">
-                The Truth about Living in a Van: Pros and Cons
-              </h2>
-              <div class="articles_tags">
-                <div class="tag">
-                  <span>Tips and tricks</span>
-                </div>
-                <div class="tag"><span>Simple past</span></div>
+              <div class="status">
+                <img class="status_icon" src="./assets/svg/status-late.svg" />
+                <p class="status_text">late</p>
               </div>
+              <h2 class="description_title">Present continuous #02</h2>
               <div class="author">
                 <img
                   class="author_picture"
                   src="./assets/images/teachers/sonally.jpg"
                 />
                 <div class="author_information">
-                  <p class="prefix">Recommended by:</p>
                   <p class="name">Sonaly Araújo</p>
                   <p class="date">on Sep 30, 2022</p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="article card">
-            <!-- Cover -->
+          <!-- Card when done -->
+          <div class="exercise card done">
             <div
               class="cover"
               style="
@@ -186,59 +160,81 @@
                     transparent 50%,
                     var(--clr-bg) 100%
                   ),
-                  url(http://unsplash.it/601/400?image=1060);
+                  url(http://unsplash.it/660/400);
               "
             ></div>
             <div class="description">
-              <h2 class="description_title">
-                How your sense of smell helps you savor flavor
-              </h2>
-              <div class="articles_tags">
-                <div class="tag">
-                  <span>Present continuous</span>
-                </div>
+              <div class="status">
+                <img class="status_icon" src="./assets/svg/status-done.svg" />
+                <p class="status_text">done</p>
               </div>
-              <div class="author">
-                <img
-                  class="author_picture"
-                  src="./assets/images/teachers/esther.jpg"
-                />
-                <div class="author_information">
-                  <p class="prefix">Recommended by:</p>
-                  <p class="name">Esther Cantarela</p>
-                  <p class="date">on Sep 30, 2022</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="article card">
-            <!-- Cover -->
-            <div
-              class="cover"
-              style="
-                background-image: linear-gradient(
-                    180deg,
-                    transparent 50%,
-                    var(--clr-bg) 100%
-                  ),
-                  url(http://unsplash.it/601/400?image=395);
-              "
-            ></div>
-            <div class="description">
-              <h2 class="description_title">
-                Why talking to strangers is good for you
-              </h2>
-              <div class="articles_tags">
-                <div class="tag"><span>Verb to be</span></div>
-                <div class="tag"><span>Vocabulary</span></div>
-              </div>
+              <h2 class="description_title">Present continuous #01</h2>
               <div class="author">
                 <img
                   class="author_picture"
                   src="./assets/images/teachers/sonally.jpg"
                 />
                 <div class="author_information">
-                  <p class="prefix">Recommended by:</p>
+                  <p class="name">Sonaly Araújo</p>
+                  <p class="date">on Sep 30, 2022</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="exercise card done">
+            <div
+              class="cover"
+              style="
+                background-image: linear-gradient(
+                    180deg,
+                    transparent 50%,
+                    var(--clr-bg) 100%
+                  ),
+                  url(http://unsplash.it/600/470);
+              "
+            ></div>
+            <div class="description">
+              <div class="status">
+                <img class="status_icon" src="./assets/svg/status-done.svg" />
+                <p class="status_text">done</p>
+              </div>
+              <h2 class="description_title">Verb to be #02</h2>
+              <div class="author">
+                <img
+                  class="author_picture"
+                  src="./assets/images/teachers/sonally.jpg"
+                />
+                <div class="author_information">
+                  <p class="name">Sonaly Araújo</p>
+                  <p class="date">on Sep 30, 2022</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="exercise card done">
+            <div
+              class="cover"
+              style="
+                background-image: linear-gradient(
+                    180deg,
+                    transparent 50%,
+                    var(--clr-bg) 100%
+                  ),
+                  url(http://unsplash.it/400);
+              "
+            ></div>
+            <div class="description">
+              <div class="status">
+                <img class="status_icon" src="./assets/svg/status-done.svg" />
+                <p class="status_text">done</p>
+              </div>
+              <h2 class="description_title">Verb to be #01</h2>
+              <div class="author">
+                <img
+                  class="author_picture"
+                  src="./assets/images/teachers/sonally.jpg"
+                />
+                <div class="author_information">
                   <p class="name">Sonaly Araújo</p>
                   <p class="date">on Sep 30, 2022</p>
                 </div>
@@ -246,8 +242,7 @@
             </div>
           </div>
         </div>
-        <!-- Button -->
-        <button class="button">View more</button>
+        <a href="./exercises.html" class="button">View more</a>
       </section>
     </main>
   </body>
