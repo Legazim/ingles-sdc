@@ -1,0 +1,8 @@
+{
+  "name": "sdc/ingles",
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}
