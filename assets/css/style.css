@@ -16,6 +16,7 @@
 :root {
   --clr-bg: #292929;
   --clr-default: #ffffff;
+  --clr-focus: #363636;
 
   /* Borders */
   --clr-pending: #ffffff;
@@ -101,8 +102,8 @@ a {
   transform: 0.3s;
 }
 
-.card:hover {
-  --clr-bg: #383838;
+.card:is(:hover, :focus-within) {
+  --clr-bg: var(--clr-focus);
 }
 
 .cover {
@@ -144,7 +145,7 @@ a {
 }
 
 .button:is(:hover, :focus-within) {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--clr-focus);
 }
 
 /* Banner */
