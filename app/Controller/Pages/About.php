@@ -4,17 +4,17 @@ namespace App\Controller\Pages;
 use \App\Model\Entity\Exercise;
 use \App\Utils\View;
 
-class Home extends Page
+class About extends Page
 {
     /**
-     * Método responsável por retornar o conteúdo (view) da nossa home
+     * Método responsável por retornar o conteúdo (view) da nossa About
      */
-    public static function getHome() : string
+    public static function getAbout() : string
     {
         $obExercise = new Exercise;
 
-        // View da home
-        $content =  View::render('pages/Home', [
+        // View da About
+        $content =  View::render('pages/about', [
             'title' => $obExercise->title,
             'status' => $obExercise->status,
             'date' => $obExercise->date,
@@ -22,6 +22,6 @@ class Home extends Page
         ]);
 
         // Retorna a view da página
-        return parent::getPage('HOME > SDC Language School', $content);
+        return parent::getPage('About > SDC Language School', $content);
     }
 }

@@ -6,9 +6,8 @@ class Response
 {
     /**
      * Código do status HTTP
-     * @var integer
      */
-    private int $httpCode = 200;
+    private readonly int $httpCode;
 
     /**
      * Cabeçalho do response
@@ -23,22 +22,21 @@ class Response
     /**
      * Conteúdo do response
      */
-    private readonly mixed $content;
+    private mixed $content;
 
     /**
      * Método responsável por iniciar a classe e definir os valores
-     * @param integer $httpCode
-     * @param mixed $content
-     * @param string $contentType
      */
-    public function __construct($httpCode, $content, $contentType = 'text/html')
+    public function __construct(int $httpCode, mixed $content, string $contentType = 'text/html')
     {
-        $this->httpCode = $httpCode;
+        $this->httpCode = $httpCode ?? 200;
         $this->content = $content;
         $this->setContentType($contentType);
     }
 
-    /** Método responsável pos alterar o content type do response */
+    /**
+     * Método responsável pos alterar o content type do response
+     */
     public function setContentType($contentType)
     {
         $this->contentType = $contentType;
