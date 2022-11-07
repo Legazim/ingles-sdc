@@ -34,7 +34,7 @@ class Router
      */
     public function __construct($url)
     {
-        $this->request = new Request();
+        $this->request = new Request($this);
         $this->url = $url;
         $this->setPrefix();
     }
@@ -120,7 +120,7 @@ class Router
      */
     private function getUri() :string {
         // URI DA REQUEST
-        $uri = $this->request->uri;
+        $uri = $this->request->getUri();
 
         // FATIA A URI COM O PREFIXO
         $xUri = strlen($this->prefix) ? explode($this->prefix, $uri) : [$uri];
@@ -132,7 +132,7 @@ class Router
     /**
      * Método responsável por retornar os dados da rota atual
      */
-    private function getRoute() : ?array {
+    private function getRoute() : array {
         // URI
         $uri = $this->getUri();
 
@@ -156,14 +156,12 @@ class Router
                     // RETORNO DE PARÂMETROS DA ROTA
                     return $methods[$httpMethod];
                 }
-
-                // MÉTODO NÃO PERMITIDO/DEFINIDO
-                throw new Exception('Método não permitido', 405);
+            // MÉTODO NÃO PERMITIDO/DEFINIDO
+            throw new Exception('Método não permitido', 405);
             }
-
         }
-            // PÁGINA NÃO ENCONTRADA
-            throw new Exception('URL não encontrada', 404);
+        // PÁGINA NÃO ENCONTRADA
+        throw new Exception('URL não encontrada', 404);
     }
 
     /**
@@ -196,4 +194,13 @@ class Router
             return new Response($e->getCode(), $e->getMessage());
         }
     }
+
+    /**
+     * Método responsável por retornar a URL atual
+     */
+    public function getCurrentUrl()
+    {
+        return $this->url.$this->getUri();
+    }
+
 }

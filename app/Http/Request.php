@@ -6,6 +6,11 @@ class Request
 {
 
     /**
+     * Instância de router
+     */
+    public readonly Router $router;
+
+    /**
      * Método Http da requisição
      */
     public readonly string $httpMethod;
@@ -13,7 +18,7 @@ class Request
     /**
      * URI da página
      */
-    public readonly string $uri;
+    private string $uri;
 
     /**
      * Parâmetros da URL ($_GET)
@@ -30,13 +35,34 @@ class Request
      */
     public readonly array $headers;
 
-    public function __construct()
+    public function __construct($router)
     {
+        $this->router = $router;
         $this->queryParams = $_GET ?? [];
         $this->postVars = $_POST ?? [];
         $this->headers = getallheaders();
         $this->httpMethod = $_SERVER['REQUEST_METHOD'] ?? '';
-        $this->uri = $_SERVER['REQUEST_URI'] ?? '';
+        $this->setUri();
     }
 
+    /**
+     * Método responsável por definir a URI
+     */
+    private function setUri()
+    {
+        // URI COMPLETA (COM GETS)
+        $this->uri = $_SERVER['REQUEST_URI'] ?? '';
+
+        // REMOVE GETS DA URI
+        $xUri = explode('?', $this->uri);
+        $this->uri = $xUri[0];
+    }
+
+    /**
+     * URI da página
+     */
+    function getUri(): string
+    {
+        return $this->uri;
+    }
 }
