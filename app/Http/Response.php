@@ -4,6 +4,7 @@ namespace App\Http;
 
 class Response
 {
+
     /**
      * Código do status HTTP
      */

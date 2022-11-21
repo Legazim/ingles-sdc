@@ -14,15 +14,15 @@
 /* General settings */
 
 :root {
-    --clr-bg: #ffffff;
-    --clr-default: #292929;
-    --clr-selected: #b6b6b6;
+    --clr-bg: #292929;
+    --clr-default: #ffffff;
+    --clr-selected: #373737;
 
     /* Borders */
     --clr-pending: #ffffff;
     --clr-late: #e74f4f;
     --clr-done: #6de74f;
-    --clr-accent: #ffdecb;
+    --clr-accent: #e17637;
 
     --sz-pd: min(95%, calc(100% - 2rem));
     --sz-mw: 70rem;
@@ -37,13 +37,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* outline: 1px dotted lime; */
 }
 
 body {
     width: 100%;
     font-family: 'Inter', sans-serif;
     background-color: var(--clr-bg);
+    color: var(--clr-default);
 }
 
 main {
@@ -344,11 +344,29 @@ li {
 }
 
 .pagination {
+    width: fit-content;
+    border: var(--default-border);
+    border-width: 0.1rem;
+    border-radius: var(--default-br);
+    overflow: hidden;
     display: flex;
-    gap: 1em;
 }
 
-.pagination .active a {
+.page-item.active {
+    background-color: var(--clr-selected);
+}
+
+.page-item {
+    border: 1px solid var(--clr-selected);
+}
+
+.page-link {
+    color: var(--clr-default);
+    padding: 0 0.5em;
+    line-height: 1.5em;
+}
+
+.active .page-link {
     font-weight: 700;
-    color: red;
+    color: var(--clr-accent);
 }

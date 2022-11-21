@@ -40,9 +40,12 @@ class View
 
         // Chaves dos arrays
         $keys = array_keys($vars);
-        $keys = array_map(function ($item) {
-            return '{{' . $item . '}}';
-        }, $keys);
+        $keys = array_map(
+            function ($item) {
+                return '{{' . $item . '}}';
+            },
+            $keys
+        );
 
         return str_replace($keys, array_values($vars), $contentView);
     }

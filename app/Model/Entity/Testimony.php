@@ -7,6 +7,7 @@ use \WilliamCosta\DatabaseManager\Database;
 
 class Testimony
 {
+
     /**
      * ID do depoimento
      */
@@ -50,4 +51,5 @@ class Testimony
     {
         return (new Database('depoimentos'))->select($where, $order, $limit, $fields);
     }
+
 }

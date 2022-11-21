@@ -12,4 +12,4 @@ require __DIR__ . '/routes/pages.php';
 
 // IMPRIME AS RESPONSES DAS ROTAS
 $obRouter->run()
-    ->sendResponse();
+         ->sendResponse();
